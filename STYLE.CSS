@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #ffd1dc, transparent 40%),
+        radial-gradient(circle at bottom right, #e8b4ff, transparent 40%),
+        linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+
+    overflow: hidden;
+
+    color: #5a2a3c;
+}
+
+/* -------------------------
+   CARD
+------------------------- */
+
+.card {
+    position: relative;
+
+    width: min(90%, 620px);
+
+    padding: 45px 38px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 60px rgba(100, 30, 70, 0.25),
+        inset 0 0 30px rgba(255, 255, 255, 0.4);
+
+    animation: cardAppear 1.2s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* -------------------------
+   CAKE
+------------------------- */
+
+.cake {
+    font-size: 70px;
+
+    margin-bottom: 10px;
+
+    animation: cakeBounce 2s infinite;
+}
+
+@keyframes cakeBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* -------------------------
+   TITLE
+------------------------- */
+
+h1 {
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+
+    color: #e75480;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 3px 10px rgba(231, 84, 128, 0.2);
+}
+
+h2 {
+    font-size: 1.6rem;
+
+    color: #a83f65;
+
+    margin-bottom: 25px;
+}
+
+.line {
+    width: 90px;
+    height: 4px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        to right,
+        #ff758c,
+        #ff7eb3
+    );
+}
+
+/* -------------------------
+   MESSAGE
+------------------------- */
+
+.message {
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: #633747;
+}
+
+.message p {
+    margin-bottom: 20px;
+}
+
+.message strong {
+    color: #e75480;
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+.footer {
+    margin-top: 25px;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    color: #a83f65;
+}
+
+.signature {
+    margin-top: 12px;
+
+    color: #8d6472;
+
+    font-size: 0.95rem;
+
+    font-style: italic;
+}
+
+/* -------------------------
+   FLOATING HEARTS
+------------------------- */
+
+.heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    pointer-events: none;
+
+    animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+/* -------------------------
+   SPARKLES
+------------------------- */
+
+.sparkle {
+    position: absolute;
+
+    font-size: 22px;
+
+    animation: sparkleAnimation 2s infinite ease-in-out;
+}
+
+.sparkle-1 {
+    top: 25px;
+    left: 30px;
+}
+
+.sparkle-2 {
+    top: 45px;
+    right: 35px;
+
+    animation-delay: 0.7s;
+}
+
+.sparkle-3 {
+    bottom: 35px;
+    left: 45px;
+
+    animation-delay: 1.3s;
+}
+
+@keyframes sparkleAnimation {
+
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 35px 23px;
+    }
+
+    .cake {
+        font-size: 55px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .message {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+}
